@@ -11,7 +11,7 @@ def f(x):
 
 N = int(input())        #### 보고 싶은 끝값 N을 입력받음
 ans1, ans2, ans3, ans4 = [], [], [], []
-for i in range(1, N+1):
+for i in range(3, N+1):
     x = np.linspace(0, np.pi, N)
     ans1.append(mm.rectangular_integral(f,x))
     ans2.append(mm.trapezoidal_integral(f,x))
@@ -20,9 +20,14 @@ for i in range(1, N+1):
 
 real_ans = [2] * N
 
+## fitting
+def func(x, a, b):
+    y = x**a + b
+    return y
 
 
-plt.plot(x, ans1, 'r-')
+popt, pcov = curve_fit(func, x, y, methon)
+plt.plot(x, ans1, 'r-', label = "rectang")
 plt.plot(x, real_ans, 'b-')
 plt.xscale('log')
 plt.yscale('log')
