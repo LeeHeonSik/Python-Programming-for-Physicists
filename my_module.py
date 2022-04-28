@@ -49,3 +49,21 @@ def simplsom_38_rule(f,x):
     res *= 3*h
     res /= 8
     return res
+
+
+
+ ####### diff Eq sol
+### Euler
+def Euler_Method(f,x,t):
+    h = t[1] - t[0]
+    for i in range(len(x)-1):
+        x[i+1] = x[i] + f(x[i], t[i]) * h
+    return x,t
+
+### Predic
+def Picard_Method(f,x,t):
+    h = t[1] - t[0]
+    for i in range(len(x)-1):
+        predic = x[i] + f(x[i],t[i]) * h     ### x _ i + 1 EM 이용해서 구함
+        x[i+1] = x[i] + (h/2)*(f(x[i],t[i]) + f(predic, t[i+1]))
+    return x, t
