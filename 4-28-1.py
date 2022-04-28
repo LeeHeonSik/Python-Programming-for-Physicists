@@ -17,11 +17,11 @@ h = t[1] - t[0]
 for i in range(len(t)-1):
     x[i+1] = x[i] + h * f(x[i], t[i])
 
-def Euler_Method(f,x,t):
-    h = t[1] - t[0]
-    for i in range(len(x)-1):
-        x[i+1] = x[i] + f(x[i], t[i]) * h
-    return x,t
+# def Euler_Method(f,x,t):
+#     h = t[1] - t[0]
+#     for i in range(len(x)-1):
+#         x[i+1] = x[i] + f(x[i], t[i]) * h
+#     return x,t
 
 
 plt.xlim(t_0, t_max)
