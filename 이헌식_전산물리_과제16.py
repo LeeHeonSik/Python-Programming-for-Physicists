@@ -35,7 +35,7 @@ def Runge_kutta_4th(f,x,t,dim):
         x[i+1] = x[i] + (c[0] + 2*c[1] + 2*c[2] + c[3])/6
     return np.array(x), t
 
-r3, t  =Runge_kutta_4th(f,r,t,dim)
+r3, t = Runge_kutta_4th(f,r,t,dim)
 
 # plt.xlabel(r'$t$')
 # plt.ylabel(r'$x(t)$, $\omega(t)$')
